@@ -90,7 +90,33 @@
             </div>
         </div>
     </section>
-
+    
+    <section class="section-container">
+        <h2 class="section-title">SERIES ĂN CƠM CÙNG DOREMON</h2>
+        <div class="comic-grid">
+            <div class="comic-card">
+                <!-- Nhớ chuẩn bị sẵn các file ảnh tương ứng trong thư mục images/anhtruyen/ -->
+                <img src="images/anhtruyen/doremon_tap1.jpg" alt="Doremon Tập 1">
+                <div class="comic-title">DOREMON - TẬP 1</div>
+                <div class="comic-chapter">Tình trạng: Còn hàng</div>
+            </div>
+            <div class="comic-card">
+                <img src="images/anhtruyen/doremon_tap2.jpg" alt="Doremon Tập 2">
+                <div class="comic-title">DOREMON - TẬP 2</div>
+                <div class="comic-chapter">Tình trạng: Còn hàng</div>
+            </div>
+            <div class="comic-card">
+                <img src="images/anhtruyen/doremon_dai_kiem_khach.jpg" alt="Doremon Đại kiếm khách">
+                <div class="comic-title">DOREMON - BẢN DÀI</div>
+                <div class="comic-chapter">Tình trạng: Còn hàng</div>
+            </div>
+            <div class="comic-card">
+                <img src="images/anhtruyen/doremon_plus.jpg" alt="Doremon Plus">
+                <div class="comic-title">DOREMON PLUS</div>
+                <div class="comic-chapter">Tình trạng: Hết hàng</div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-container">
