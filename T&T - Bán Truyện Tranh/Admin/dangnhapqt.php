@@ -1,6 +1,69 @@
 <?php
-require_once "config.php";$error="";
-if($_SERVER["REQUEST_METHOD"]==="POST"){$u=trim($_POST["username"]??"");$p=$_POST["password"]??"";
-$s=$conn->prepare("SELECT * FROM taikhoan WHERE ten_dang_nhap=? AND vai_tro='admin' LIMIT 1");$s->execute([$u]);$a=$s->fetch();
-if($a&&password_verify($p,$a["mat_khau"])){$_SESSION["admin_id"]=$a["id"];$_SESSION["admin_name"]=$a["ho_ten"];header("Location: thongke.php");exit;}else{$error="Sai tên đăng nhập hoặc mật khẩu.";}}
-?><!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Đăng nhập Admin</title><link rel="stylesheet" href="admin.css"></head><body class="login-page"><form class="login-box" method="post"><h2>ADMIN TRUYỆN TRANH</h2><p>Đăng nhập hệ thống</p><?php if($error):?><div class="alert"><?=$error?></div><?php endif;?><label>Tên đăng nhập</label><input name="username" required><label>Mật khẩu</label><input type="password" name="password" required><button class="btn">Đăng nhập</button><small>Tài khoản mẫu: admin / Admin@123</small></form></body></html>
+session_start();
+include("ketnoi.php");
+
+if (isset($_POST["dangnhap"])) {
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $sql = "SELECT * FROM taikhoan
+            WHERE ten_dang_nhap='$username'
+            AND vai_tro='admin'";
+
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+
+        $row = mysqli_fetch_assoc($result);
+
+        if (password_verify($password, $row["mat_khau"])) {
+            $_SESSION["admin"] = $row["ho_ten"];
+
+            header("Location: thongke.php");
+            exit();
+        }
+        else {
+            $thongbao = "Sai mật khẩu!";
+        }
+    }
+    else {
+        $thongbao = "Không tìm thấy tài khoản!";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng nhập ADMIN</title>
+</head>
+
+<body>
+
+<h2>ĐĂNG NHẬP QUẢN TRỊ</h2>
+
+<form method="post">
+
+    Tên đăng nhập:
+    <input type="text" name="username" required>
+    <br><br>
+
+    Mật khẩu:
+    <input type="password" name="password" required>
+    <br><br>
+
+    <button type="submit" name="dangnhap">
+        Đăng nhập
+    </button>
+
+</form>
+
+<?php
+if (isset($thongbao)) {
+    echo $thongbao;
+}
+?>
+
+</body>
+</html>
