@@ -1,0 +1,240 @@
+/* CSS Cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Thanh điều hướng (Header) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    color: #e50914;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    background-color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 40px 10px 20px;
+    color: white;
+    outline: none;
+    width: 250px;
+}
+
+/* Phần Banner Nổi bật (Hero Section) */
+.hero {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: radial-gradient(circle at 50% 50%, #2a2a2a 0%, #121212 70%);
+    min-height: 60vh;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.tags {
+    color: #b3b3b3;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-size: 60px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-read {
+    background-color: #e50914;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.chapter-info {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.hero-image img {
+    max-width: 500px;
+    height: auto;
+}
+
+
+.section-container {
+    padding: 40px 50px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.comic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.comic-card {
+    background-color: transparent;
+}
+
+.comic-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.comic-card img:hover {
+    transform: scale(1.05);
+}
+
+.comic-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.comic-chapter {
+    font-size: 12px;
+    color: #b3b3b3;
+}
+footer {
+    background-color: #1a1a1a; /* Màu nền sáng hơn nền body một chút để tạo sự tách biệt */
+    color: #b3b3b3;
+    padding: 60px 50px 20px 50px;
+    margin-top: 60px;
+    border-top: 2px solid #333;
+}
+
+.footer-container {
+    display: grid;
+    /* Chia làm 4 cột, cột đầu to gấp đôi các cột còn lại */
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+.footer-col h3 span {
+    color: #e50914; /* Màu đỏ đồng bộ với logo */
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 15px;
+}
+
+.footer-col ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s, padding-left 0.3s;
+    display: inline-block;
+}
+
+
+.footer-col ul li a:hover {
+    color: #e50914;
+    padding-left: 5px; 
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid #333;
+    font-size: 13px;
+    color: #777;
+}
